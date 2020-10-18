@@ -3,6 +3,9 @@ const app = express()
 
 // Add the middleware code needed to accept incoming data and add it to req.body
 
+app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
+
 const cookbookRouter = require('./controllers/cookbookRoutes')
 app.use('/api/cookbooks/', cookbookRouter)
 
